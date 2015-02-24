@@ -22,8 +22,8 @@
  *
  * For installation, habe a look at the extension page on yiiframework.com or
  * on GitHub. There you can find all information about this component:
- * http://www.yiiframework.com/extension/usercounter/
- * https://github.com/armin-pfaeffle/yii-usercounter
+ * http://www.yiiframework.com/extension/yii-usercounter/
+ * https://github.com/armin-pfaeffle/yii-usercounter/
  *
  * Provides methods:
  * - Yii::app()->userCounter->getOnline()
@@ -43,8 +43,8 @@
  * @author Armin Pfäffle <mail@armin-pfaeffle.de>
  * @author Andreas "Pr0g" Droesch
  * @copyright Copyright (c) 2015, Armin Pfäffle <mail@armin-pfaeffle.de>
- * @link https://github.com/armin-pfaeffle/yii-usercounter
- * @link http://www.yiiframework.com/extension/usercounter/
+ * @link https://github.com/armin-pfaeffle/yii-usercounter/
+ * @link http://www.yiiframework.com/extension/yii-usercounter/
  * @link http://andreas.droesch.de
  * @version 1.2
  */

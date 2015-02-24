@@ -88,3 +88,7 @@ UserCounter does not use cookies or sessions to detect visits. It only considere
 ## Changelog
 
 [Changelog at GitHub](https://github.com/armin-pfaeffle/yii-usercounter/tree/master/CHANGELOG.md)
+
+## Source
+
+[Changelog at GitHub](https://github.com/armin-pfaeffle/yii-usercounter/)
