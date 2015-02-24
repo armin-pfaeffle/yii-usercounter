@@ -85,10 +85,7 @@ UserCounter does not use cookies or sessions to detect visits. It only considere
 * `autoInstallTables`: if `true`and tables does not exist, tables are installed to database on component initialization.
 * `onlineTime`: defines the time in minutes, how long a user is considered *online* without any further action.
 
-## Changelog
+## yiiframework.com
 
-[Changelog at GitHub](https://github.com/armin-pfaeffle/yii-usercounter/tree/master/CHANGELOG.md)
+[yii-usercounter on yiiframework.com](http://www.yiiframework.com/extension/yii-usercounter/)
 
-## Source
-
-[Changelog at GitHub](https://github.com/armin-pfaeffle/yii-usercounter/)
