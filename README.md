@@ -22,7 +22,7 @@ With version 1.2 I have completely rewritten this component and added some new f
 1. Copy `UserCounter.php` from folder **1.1** to `protected/components` or `protected/extensions`.
 2. Open your config, in my case `protected/config/main.php`.
 3. Add the component **userCounter** to the *components*-section, so it's accessable via `Yii::app()->userCounter`.
-```
+```php
 return array(
     'components' => array(
         'userCounter' => array(
@@ -42,7 +42,7 @@ return array(
 ```
 Please ensure that you use the correct class path and have a look at the options for UserCounter: `tableUsers`, `tableSave`, `autoInstallTables` and `onlineTime`. For further information [go to documentation](#documentation).
 4. *(optional)* If you want UserCounter to update the user values automatically, you can add `userCounter` to the `preload`configuration. If you want to update it on your own, you have to call `Yii::app()->userCounter->refresh()`:
-```
+```php
 return array(
 	'preload' => array('log', 'counter'),
 );
@@ -56,7 +56,7 @@ Coming soon...
 # Usage
 
 Here a very simple example how you can use UserCounter. This example shows you how you access every value provided by this component.
-```
+```php
 online: <?php echo Yii::app()->counter->getOnline(); ?><br />
 today: <?php echo Yii::app()->counter->getToday(); ?><br />
 yesterday: <?php echo Yii::app()->counter->getYesterday(); ?><br />
