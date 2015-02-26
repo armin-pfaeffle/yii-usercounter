@@ -56,7 +56,7 @@ Coming soon...
 # Usage
 
 Here a very simple example how you can use UserCounter. This example shows you how you access every value provided by this component.
-```php
+```html
 online: <?php echo Yii::app()->counter->getOnline(); ?><br />
 today: <?php echo Yii::app()->counter->getToday(); ?><br />
 yesterday: <?php echo Yii::app()->counter->getYesterday(); ?><br />
