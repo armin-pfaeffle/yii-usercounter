@@ -46,7 +46,7 @@
  * @link https://github.com/armin-pfaeffle/yii-usercounter/
  * @link http://www.yiiframework.com/extension/yii-usercounter/
  * @link http://andreas.droesch.de
- * @version 1.2
+ * @version 1.2.1
  */
 
 class UserCounter extends CComponent
@@ -223,11 +223,12 @@ class UserCounter extends CComponent
 	{
 		$ipAddress = isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : $_SERVER['REMOTE_ADDR'];
 		$hashedIpAddress = md5($ipAddress);
+		$currentTimestamp = time();
 
 		$sql = 'INSERT INTO ' . $this->tableUsers . ' VALUES (:ipAddress, :time) ON DUPLICATE KEY UPDATE user_time = :time';
 		$command = Yii::app()->db->createCommand($sql);
 		$command->bindParam(':ipAddress', $hashedIpAddress, PDO::PARAM_STR);
-		$command->bindParam(':time', time(), PDO::PARAM_INT);
+		$command->bindParam(':time', $currentTimestamp, PDO::PARAM_INT);
 		$command->execute();
 	}
 

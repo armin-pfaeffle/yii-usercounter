@@ -1,3 +1,6 @@
+## Version 1.2.1
+* Fixed bug where exception "Only variables should be passed by reference" can occur (thanks to leduy)
+
 ## Version 1.2
 * Complete rewrite
 * IP address is stored as md5 hash
