@@ -1,3 +1,6 @@
+## Version 1.2.2
+* Fixed documentation error
+
 ## Version 1.2.1
 * Fixed bug where exception "Only variables should be passed by reference" can occur (thanks to leduy)
 

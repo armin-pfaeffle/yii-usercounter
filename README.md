@@ -44,7 +44,7 @@ Please ensure that you use the correct class path and have a look at the options
 4. *(optional)* If you want UserCounter to update the user values automatically, you can add `userCounter` to the `preload`configuration. If you want to update it on your own, you have to call `Yii::app()->userCounter->refresh()`:
 ```php
 return array(
-	'preload' => array('log', 'counter'),
+	'preload' => array('log', 'userCounter'),
 );
 ```
 
@@ -57,12 +57,12 @@ Coming soon...
 
 Here a very simple example how you can use UserCounter. This example shows you how you access every value provided by this component.
 ```html
-online: <?php echo Yii::app()->counter->getOnline(); ?><br />
-today: <?php echo Yii::app()->counter->getToday(); ?><br />
-yesterday: <?php echo Yii::app()->counter->getYesterday(); ?><br />
-total: <?php echo Yii::app()->counter->getTotal(); ?><br />
-maximum: <?php echo Yii::app()->counter->getMaximal(); ?><br />
-date for maximum: <?php echo date('d.m.Y', Yii::app()->counter->getMaximalTime()); ?>
+online: <?php echo Yii::app()->userCounter->getOnline(); ?><br />
+today: <?php echo Yii::app()->userCounter->getToday(); ?><br />
+yesterday: <?php echo Yii::app()->userCounter->getYesterday(); ?><br />
+total: <?php echo Yii::app()->userCounter->getTotal(); ?><br />
+maximum: <?php echo Yii::app()->userCounter->getMaximal(); ?><br />
+date for maximum: <?php echo date('d.m.Y', Yii::app()->userCounter->getMaximalTime()); ?>
 ```
 ### Result
 
