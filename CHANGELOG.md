@@ -1,3 +1,7 @@
+## 1.3.0
+* Added version for Yii2
+* Minor changes
+
 ## Version 1.2.2
 * Fixed documentation error
 

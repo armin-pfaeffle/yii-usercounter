@@ -32,10 +32,11 @@ return array(
             // ... or this for extensions folder
             'class' => 'ext.UserCounter',
 
-            // 'tableUsers' => 'pcounter_users',
-            // 'tableSave' => 'pcounter_save',
-            // 'autoInstallTables' => true,
-            // 'onlineTime' => 10, // min
+            // You can setup these options:
+            'tableUsers' => 'pcounter_users',
+            'tableSave' => 'pcounter_save',
+            'autoInstallTables' => true,
+            'onlineTime' => 10, // min
         ),
     ),
 );
@@ -50,12 +51,39 @@ return array(
 
 ## Yii 2.0
 
-Coming soon...
+1. Copy `UserCounter.php` from folder **2.0** to your app folder, e.g. `/components` (basic template) or `/frontend/components` (with advanced template).
+2. Open your config, in my case it's `frontend/config/main.php`.
+3. Add the component `userCounter` to the *components*-section, so it's accessable via `Yii::$app->userCounter`.
+```php
+return [
+    'components' => [
+        'userCounter' => [
+            'class' => 'app\components\UserCounter',
+
+            // You can setup these options:
+            'tableUsers' => 'pcounter_users',
+            'tableSave' => 'pcounter_save',
+            'autoInstallTables' => true,
+            'onlineTime' => 10, // min
+        ],
+    ],
+];
+```
+Please ensure that you use the correct class path and have a look at the options for UserCounter: `tableUsers`, `tableSave`, `autoInstallTables` and `onlineTime`. For further information [go to documentation](#documentation).
+4. *(optional)* If you want UserCounter to update the user values automatically, you can add `userCounter` to the `preload`configuration. If you want to update it on your own, you have to call `Yii::$app->userCounter->refresh()`:
+```php
+return [
+	'bootstrap' => ['log', 'userCounter'],
+];
+```
 
 
 # Usage
 
 Here a very simple example how you can use UserCounter. This example shows you how you access every value provided by this component.
+
+## Yii 1.1
+
 ```html
 online: <?php echo Yii::app()->userCounter->getOnline(); ?><br />
 today: <?php echo Yii::app()->userCounter->getToday(); ?><br />
@@ -64,6 +92,18 @@ total: <?php echo Yii::app()->userCounter->getTotal(); ?><br />
 maximum: <?php echo Yii::app()->userCounter->getMaximal(); ?><br />
 date for maximum: <?php echo date('d.m.Y', Yii::app()->userCounter->getMaximalTime()); ?>
 ```
+
+## Yii 2.0
+
+```html
+online: <?php echo Yii::$app->userCounter->getOnline(); ?><br />
+today: <?php echo Yii::$app->userCounter->getToday(); ?><br />
+yesterday: <?php echo Yii::$app->userCounter->getYesterday(); ?><br />
+total: <?php echo Yii::$app->userCounter->getTotal(); ?><br />
+maximum: <?php echo Yii::$app->userCounter->getMaximal(); ?><br />
+date for maximum: <?php echo date('d.m.Y', Yii::$app->userCounter->getMaximalTime()); ?>
+```
+
 ### Result
 
 online: 9  
@@ -76,18 +116,35 @@ date for maximum: 17.10.2009
 
 ## Documentation
 
-UserCounter does not use cookies or sessions to detect visits. It only consideres the IP address of the user, with all its pitfalls ‒ this component is meant to be a simple component. The IP address is stored as md5 hash, so privacy is considered.
+UserCounter does not use any cookies or sessions to detect visits. It only consideres the IP address of the user, with all its pitfalls ‒ this component is meant to be a simple component. The IP address is stored as md5 hash, so privacy is considered.
 
 ### Options
 
-* `tableUsers`: name of table, in which visitor information, IP address and last access timestamp, is stored.
-* `tableSave`: name of table in which component statistics are stored.
-* `autoInstallTables`: if `true`and tables does not exist, tables are installed to database on component initialization.
-* `onlineTime`: defines the time in minutes, how long a user is considered *online* without any further action.
+- #### `tableUsers`
+    Name of table, in which visitor information, IP address and last access timestamp, is stored.
+
+    Default: `pcounter_users`
+
+- #### `tableSave`
+    Name of table in which component statistics are stored.
+
+    Default: `pcounter_save`
+
+- #### `autoInstallTables`
+    If `true`and tables does not exist, tables are installed to database on component initialization.
+
+    Default: `true`
+
+- #### `onlineTime`
+    Defines the time in minutes, how long a user is considered *online* without any further action.
+
+    Default: `10`
+
 
 ## Changelog
 
 [Changelog at GitHub](https://github.com/armin-pfaeffle/yii-usercounter/tree/master/CHANGELOG.md)
+
 
 ## yiiframework.com
 
